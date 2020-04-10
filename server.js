@@ -1,8 +1,11 @@
 const express = require('express');
 const server = express();
 
-const projectsRouter = require('./projects/projectRouter');
+const projectRouter = require('./projects/projectRouter');
 const actionsRouter = require('./actions/actionsRouter');
+
+server.use('/project', projectRouter);
+server.use('/actions', actionsRouter);
 
 server.get('/', (req, res, next) => {
     res.send(`<h2>Node API Sprint Challenge</h2>`);
