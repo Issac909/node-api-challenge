@@ -2,6 +2,9 @@ const express = require("express");
 const projects = require("../data/helpers/projectModel");
 const router = express.Router();
 
+const validateProject = require('../common/validate-project');
+const validateProjectId = require('../common/validate-project-id');
+
 router.get("/", (req, res) => {
   projects
     .get()
@@ -32,7 +35,7 @@ router.get("/actions/:id", validateProjectId, (req, res) => {
 router.post("/", validateProject, (req, res) => {
   projects
     .insert(req.body)
-    .then((data) => res.status(201).json(data))
+    .then((data) => res.json(data))
     .catch((err) =>
       res.status(404).json({ message: "Error attempting to create post", err })
     );
