@@ -39,20 +39,19 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
 - [ ] Mention two parts of Express that you learned about this week.
-    Express is a middleware that allows our server to read JSON. On top of that it allows us access to the request, response and whether or not the next middleware should be used.
+    Express is to our backend what React is our Front End. Express allows us to attach middleware to our server which do things like convert the JS we write in into JSON for the database.
 
 - [ ] Describe Middleware?
-
-    Middleware is a function we put inside a function that is used. The functions purpose can be many different things, for example getting a log of the website page visits  of a user.
+    Middleware are functions essentially. More specifically an order of functions that run depending on how the route is set up. We can use it for checking user ID or loggin the route the client requested.
 
 - [ ] Describe a Resource?
-    Resource is where the client looks at data as reference and when used in certain middleware and if a user has made a certain request like CRUD operations
+    A resource is set up in our middleware and allows us to check the information attempting to post to the database, then determine whether or not we wanna continue passing the 'resource' to the intended route.
 
 - [ ] What can the API return to help clients know if a request was successful?
-    An api call returns a status code which we can use to see whether a request was succesful or not. The status code can vary depending on what CRUD operation the client is trying to perform.
+    An API call should send back a status code. The status codes that usually represent success are 200 and 201.
 
 - [ ] How can we partition our application into sub-applications?
-    Based on what set of data a certain part of out site uses. For example, if the user client is using the login or register pages, they need access to the user data. If the client is shopping for some items, it is pulling from the items data.
+    Once you can recognize the entities of your website, figure out which ones are related. For example, for users we need id, name and password, while products would need id, productName, category, etc.
 
 ## Minimum Viable Product
 

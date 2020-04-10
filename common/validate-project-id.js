@@ -8,11 +8,11 @@ module.exports = function validateProjectId(req, res, next) {
                 req.project = project;
                 next();
             } else {
-                res.status(400).json({ message: 'project could not be found.'})
+                res.status(400).json({ message: 'No project found with that ID'})
             }
         })
         .catch(err => {
             console.log(err);
-            res.status(500).json({ message: 'server error, cant find post', err })
+            res.status(500).json({ message: 'Server error, cant find post', err })
         });
 };
